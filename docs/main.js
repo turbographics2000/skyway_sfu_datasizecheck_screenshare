@@ -24,11 +24,11 @@ chrome.runtime.sendMessage('eiceogpklagmibnoccdincfglccflknk', { cap: true }, as
     }
     console.log(`streamId:${stream.id}`);
     const peer = new Peer(myId, {
-        key: 'd3d2c59d-d7e9-4095-899b-73df92874a68'
+        key: 'bea1e09a-a7f9-41fb-8700-e6d18ba907bd'
     });
     peer.on('open', id => {
         myIdDisp.textContent = id;
-        const room = peer.joinRoom('hoge_fuga_piyo_sfu', { mode: 'sfu', stream });
+        const room = peer.joinRoom('hoge_fuga_piyo_sfu', { mode: 'sfu', stream, videoBandwidth: 2048 });
         room.on('stream', stream => {
             console.log(`room on stream peerId:${stream.peerId}`);
             appendVideo(stream);
